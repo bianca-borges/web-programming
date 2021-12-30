@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <script>
+        function metodoMap(){
+           var vetor1;
+           vetor1 = [2,4,6,8];
+           var vetor2 = vetor1.map(funcaoQueIteraArray);
+           
+           function funcaoQueIteraArray(valor, indice,vetor){  
+                 return 2 * valor;
+           }
+           
+           var paragrafo = document.getElementById("demo");
+           paragrafo.innerHTML = vetor2;
+           }
+        </script>
+  </head>
+  <body>
+    <h2>Método map</h2>
+    <button onclick="metodoMap()">Testa método map</button>
+    <p id="demo"></p>
+
+  </body>
+</html>

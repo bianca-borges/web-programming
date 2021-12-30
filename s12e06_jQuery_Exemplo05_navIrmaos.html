@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .descendants * {
+                display: block;
+                border: 2px solid gray;
+                color: gray;
+                padding: 5px;
+                margin: 15px;
+            }
+
+        </style>
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                //Método-1
+                $("#btn01").click(function (){
+                    var irmaoDeULQueSaoParagrafos = $("ul").siblings("p");
+                    irmaoDeULQueSaoParagrafos.css({"color":"yellow","background-color":"blue"});
+                });
+                //Fim do Método-1
+
+                //Método-2
+                $("#btn02").click(function (){                
+                    var irmaoDeParagrafosQueSaoUL= $("p").siblings("ul");
+                    irmaoDeParagrafosQueSaoUL.css({"color":"white","background-color":"aqua"});
+                });
+                //Fim do Método-2
+
+                //Método-3
+                $("#btn03").click(function (){                
+                    var irmao2_SP = $("#li01").next().next();
+                    irmao2_SP.css({"color":"white","background-color":"black"});
+                });
+                //Fim do Método-3
+
+                //Método-4
+                $("#btn04").click(function (){                
+                    var irmao2_SP = $("#li01").next().next();
+                    var riodeJaneiro = irmao2_SP;
+                    var todosProxIrmaosRJ = riodeJaneiro.nextAll();
+                    todosProxIrmaosRJ.css({"color":"yellow","background-color":"gray"});
+                });
+                //Fim do Método-4
+                //Método-5
+                $("#btn05").click(function (){                
+                    var todosIrmaosESAteSP = $("#li05").prevUntil("#li01");
+                    todosIrmaosESAteSP.css({"border":"solid 5px black"});
+                });
+                //Fim do Método-5
+            });
+        </script>
+    </head>
+    <body>
+        <div class="descendants" style="width:500px;">div (elemento corrente)
+            <p>p (filho-1 da div)
+                <span>span (neto-1 da div)</span>
+            </p>
+            <p>p (filho-2 da div)
+                <span>span (neto-2 da div)</span>
+            </p>
+            <ul>
+                <li id="li01">São Paulo</li>
+                <li>Rio Grande do Sul</li>
+                <li>Rio de Janeiro</li>
+                <li>Minas Gerais</li>
+                <li id="li05">Espírito Santo</li>
+            </ul>
+            <p>p (filho-4 da div)
+                <span>span (neto-4 da div)</span>
+            </p>            
+        </div>
+        <button id="btn01">Encontre os irmãos da ul que são p</button><br>
+        <button id="btn02">Encontre os irmãos da p que são ul</button><br>
+        <button id="btn03">Encontre o segundo irmão de São Paulo</button><br>
+        <button id="btn04">Todos os próximos irmãos do RJ</button><br>
+        <button id="btn05">Todos os irmãos anteriores do Espírito Santo até SP</button><br>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("button").click(function () {
+          var id_usuario = parseInt($("#id_user").val());
+          var nome = $("#name").val();
+          var email = $("#email").val();
+          $.support.cors = true;
+          $.ajax({
+            url: "https://pw1ifsp.herokuapp.com/users",
+            type: "POST",
+            data: { id: id_usuario, name: nome, email: email },
+            success: function (result) {
+                alert(result);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label>Id</label>
+    <input type="text" id="id_user"><br>
+    <label>Nome</label>
+    <input type="text" id="name"><br>
+    <label>Email</label>
+    <input type="text" id="email"><br>
+    <button>Cadastra usuário</button>
+  </body>
+</html>
+

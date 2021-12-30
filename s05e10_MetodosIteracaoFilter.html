@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <script>
+        function metodoFilter(){
+           var vetor1;
+           vetor1 = [2,4,6,8,10,12,15];
+           var vetor2 = vetor1.filter(funcaoQueIteraArray);
+           
+           function funcaoQueIteraArray(valor, indice,vetor){  
+                 return valor>5;
+           }
+           
+           var paragrafo = document.getElementById("demo");
+           paragrafo.innerHTML = vetor2;
+           }
+        </script>
+  </head>
+  <body>
+    <h2>Método filter</h2>
+    <button onclick="metodoFilter()">Testa método filter</button>
+    <p id="demo"></p>
+
+  </body>
+</html>

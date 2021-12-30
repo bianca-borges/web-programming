@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Função-01</title>
+    </head>
+    <body>
+        <p id="p1"></p>
+        <p id="p2"></p>
+
+        <script>
+            let add = function adicao(a , b){
+                let c;
+                c = a + b;
+                let objetoPar = document.getElementById("p1");
+                objetoPar.innerHTML = "O valor da soma entre a e b vale: " + c;
+                
+            }//Fim da função adicao
+            let minus = function subtracao(a , b){
+                let c;
+                c = a - b;
+                let objetoPar2 = document.getElementById("p2");
+                objetoPar2.innerHTML = "O valor da subtração entre a e b vale: " + c;
+                
+            }//fim da função subtracao
+
+            function main(){
+                add(4, 9);
+                minus(6 , 2);
+            }
+            
+            main();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Função-01</title>
+    </head>
+    <body>
+        <p id="p1"></p>
+
+        <script>
+            function funcaoTeste(funcaoMultiplicacao){
+                let resultado = funcaoMultiplicacao(2,3);
+                let par = document.getElementById("p1");
+                par.innerHTML = resultado;
+            }
+
+            let produto = function multiplicacao(a , b){
+                let c;
+                c = a * b;
+                return c;
+            }//Fim da função multiplicacao
+
+            funcaoTeste(produto);
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript">
+            //A função abaixo é executada ao clicar do botãovar str = "";
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $.support.cors = true;
+                    $.ajax({
+                        url: "https://pw1ifsp.herokuapp.com/users",
+                        type: "GET",
+                        success: function (result) {
+                            trataRespostaAJAX(result);                            
+                        }
+                    });
+                });
+            });
+            //A função abaixo é executado quando a resposta 
+            //AJAX chega no cliente
+            function trataRespostaAJAX(result){
+                var str = "";
+                for (i = 0; i < result.length; i++) {
+                    str += "ID="+result[i].id +";"+
+                            "Nome="+result[i].name +";"+
+                            "Email="+result[i].email +"\n";
+                }
+                alert(str);
+            }
+        </script>
+    </head>
+    <body>
+        <button>Obtém registros</button>
+    </body>
+</html>

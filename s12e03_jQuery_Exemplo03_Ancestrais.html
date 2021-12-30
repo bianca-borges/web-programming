@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .ancestrais * {
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+            button{
+                position:relative;
+                top:200px;
+
+            }
+        </style>
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click( function(){
+                    let ancestraisDoSpan = $("span").parentsUntil(".ancestrais");
+                    ancestraisDoSpan.css({ "color": "red", "border": "2px solid blue" });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="ancestrais">
+            <div class="tataravo" style="width:500px;">div (tataravô do span-1)
+                <div class="bisavo">div (bisavô do span-1)
+                    <ul>ul (vô do span-1)
+                        <li>li (pai do span-1)
+                            <span>span-1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button>Encontre todos os ancestrais do span</button>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Iteração</title>
+    <script>
+        function testaforEach(){
+            var frutas = ["pera","abacate","limao"];
+            var textHTML = "";
+            var textHTML="<ul>";
+            var i=0;
+            var tamanho = frutas.length;
+            frutas.forEach(montaLi);
+            textHTML+="</ul>";
+            var objetoDemoForEach = document.getElementById("demoforEach");
+            objetoDemoForEach.innerHTML = textHTML;
+
+            function montaLi(elementoVetor,indice){
+                textHTML+="<li>["+indice+"]="+elementoVetor+"</li>";
+            }
+
+           
+        }//Fim da  testaforEach
+       
+    </script>
+</head>
+<body>
+    <h1>Teste de forEach</h1>
+    <p id="demoforEach"></p>
+    <button onclick="testaforEach()">Teste</button>
+
+    
+</body>
+</html>

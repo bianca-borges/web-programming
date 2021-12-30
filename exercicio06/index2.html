@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 06</title>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#btnAcao').on('click',function(){
+            //Guarda os valores dos controles em variaveis
+            var n1 = parseFloat($("#nota1").val());
+            var n2 = parseFloat($("#nota2").val());
+            var n3 = parseFloat($("#nota3").val());
+            var n4 = parseFloat($("#nota4").val());
+            var n5 = parseFloat($("#nota5").val());
+            var media;
+
+            //Calcula os valores
+            if(!n5){
+                media = (n1 + n2 + n3 + n4) / 4;
+            } else {
+                media = (n1 + n2 + n3 + n4 + n5) / 5;
+            }
+
+            //Atribui valor no campo media
+            $('#txtMedia').val(media);
+
+        });
+
+    </script>
+</head>
+<body>
+
+<form id="formulario">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome"><br>
+    <label for="nota1">Nota 1</label>
+    <input type="text" id="nota1" class="notas"><br>
+    <label for="nota2">Nota 2</label>
+    <input type="text" id="nota2" class="notas"><br>
+    <label for="nota3">Nota 3</label>
+    <input type="text" id="nota3" class="notas"><br>
+    <label for="nota4">Nota 4</label>
+    <input type="text" id="nota4" class="notas"><br>
+    <label for="nota5">Nota 5: IFA</label>
+    <input type="text" id="nota5" class="notas"><br>
+</form>
+<input id="btnAcao" type="submit" value="Média" onclick="media()">
+<p id="demo">Notas aqui</p>
+
+</body>
+</html>

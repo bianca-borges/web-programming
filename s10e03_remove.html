@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exemplo de getItem</title>
+        <script>
+            function remove(){
+                var tabela = document.getElementsByTagName("table")[0];
+                var tcorpo = tabela.lastElementChild;
+                var linha = tcorpo.lastElementChild;
+
+                linha.remove();
+            }
+
+            function inserirLinhaFim(){
+                var primeiroTexto = document.createTextNode("Mariana");
+                var primeiroTD = document.createElement("td");
+                primeiroTD.appendChild(primeiroTexto);
+
+                var segundoTexto = document.createTextNode("Pratz");
+                var segundoTD = document.createElement("td");
+                segundoTD.appendChild(segundoTexto);
+
+                var novaLinha = document.createElement("tr");
+
+                novaLinha.appendChild(primeiroTD);
+                novaLinha.appendChild(segundoTD);
+
+                var tcorpo = document.getElementsByTagName("tbody")[0];
+                tcorpo.appendChild(novaLinha);
+
+
+
+            }
+           
+        </script>
+        
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>Silva</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>Oliveira</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="btn01" onclick="remove()">Remover</button>
+        <button id="btn02" onclick="inserirLinhaFim()">Inserir Linha</button>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exemplo de getItem</title>
+        <script>
+            function insereNoPrimeiroElemento(){
+                var lista = document.getElementsByTagName("ul")[0];
+                var primeiroElemento = lista.firstElementChild;
+
+                var textoLista = document.createTextNode("Item-0");
+                var novoIl = document.createElement("li");
+                novoIl.appendChild(textoLista);
+                lista.insertBefore(novoIl,primeiroElemento);
+
+            }
+            function insereNoPenultimoElemento(){
+                var lista = document.getElementsByTagName("ul")[0];
+                var ultimoElemento = lista.lastElementChild;
+
+                var textoLista = document.createTextNode("Item-2.1");
+                var novoIl = document.createElement("li");
+                novoIl.appendChild(textoLista);
+                lista.insertBefore(novoIl,ultimoElemento);
+
+            }
+        </script>
+        
+    </head>
+    <body>
+        <ul>
+            <li>Item-1</li>
+            <li>Item-2</li>
+        </ul>
+        <button id="btn01" onclick="insereNoPrimeiroElemento()">Adicionar primeiro</button>
+        <button id="btn02" onclick="insereNoPenultimoElemento()">Adicionar ultimo</button>
+    </body>
+</html>

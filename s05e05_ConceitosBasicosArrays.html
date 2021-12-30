@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Array-01</title>
+    <script>
+        function criaArray1(){
+            var objetoPar = document.getElementById("par1");
+            var str="";
+            var carro = ["Gol","Pálio","Onix"];
+
+            carro[1] = "Pálio-XPTO";
+
+            str+="<h3>Opção-01:</h3>" + carro[0]+"<br>"; 
+            str+=carro[1]+"<br>";
+            str+=carro[2]+"<br>";
+
+            objetoPar.innerHTML = str;
+
+        }//fim da função criaArray1
+
+        function criaArray2(){
+            var objetoPar2 = document.getElementById("par2");
+            var str="";
+            var i;
+            var moto = new Array();
+            moto[0] = "Kawasaki";
+            moto[1] = "Suzuki";
+            moto[2] = "Honda";
+
+            moto[1] = "Suzuki Highlander";
+
+            str="<h3>Opção-02:</h3>";
+            for(i=0; i<moto.length; i++){
+                str+=moto[i]+"<br>";
+            }
+
+            objetoPar2.innerHTML = str;
+
+        }//fim da função criaArray2
+
+         function criaArray3(){
+            var carro = ["Gol","Pálio","Onix"];
+            alert(carro);
+
+        }//fim da função criaArray1
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de arrays</h1>
+    <button onclick="criaArray1()">Criar Array - Opção-01</button>
+    <p id="par1"></p>
+    <button onclick="criaArray2()">Criar Array - Opção-02</button>
+    <p id="par2"></p>
+    <button onclick="criaArray3()">Mostra vetor carro</button>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="utf-8">
+    <title>Exercício 06</title>
+</head>
+<body>
+
+<form id="formulario">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome"><br>
+    <label for="nota1">Nota 1</label>
+    <input type="text" id="nota1" class="notas"><br>
+    <label for="nota2">Nota 2</label>
+    <input type="text" id="nota2" class="notas"><br>
+    <label for="nota3">Nota 3</label>
+    <input type="text" id="nota3" class="notas"><br>
+    <label for="nota4">Nota 4</label>
+    <input type="text" id="nota4" class="notas"><br>
+    <label for="nota5">Nota 5: IFA</label>
+    <input type="text" id="nota5" class="notas"><br>
+</form>
+<input type="submit" value="Média" onclick="media()">
+<p id="demo">Notas aqui</p>
+
+<script>
+
+    function media() {
+        let n1 = parseInt(document.getElementById('nota1').value);
+        let n2 = parseInt(document.getElementById('nota2').value);
+        let n3 = parseInt(document.getElementById('nota3').value);
+        let n4 = parseInt(document.getElementById('nota4').value);
+        let n5 = parseInt(document.getElementById('nota5').value);
+        let texto;
+        let m;
+        if (!n5){
+            m = (n1 + n2 + n3 + n4) / 4;
+        }
+        else {
+            m = (n1 + n2 + n3 + n4 + n5) / 5;
+        }
+
+        if (m >= 6){
+            texto = document.getElementById('nome').value + " está aprovado(a)";
+        }
+        else {
+            texto = document.getElementById('nome').value + " está reprovado(a)";
+        }
+
+        document.getElementById("demo").innerHTML = texto;
+
+    }
+</script>
+</body>
+</html>

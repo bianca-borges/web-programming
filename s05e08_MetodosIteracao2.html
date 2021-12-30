@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo métodos de iteração</title>
+    <script>
+//        <ul>
+//            <li>abacate</li>
+//            <li>melão</li>
+//            <li>abacaxi</li>
+//            <li>uva</li>
+//        </ul>
+        function testaForEach(){
+            var frutas=["abacate","melão","abacaxi","uva"];
+
+            var str="<ul>";
+
+            frutas.forEach(criarItensLista);
+
+
+            function criarItensLista(fruta,indice){
+                str+="<li>["+indice+"]:"+fruta+"</li>";
+            }
+
+            str+="</ul>";            
+            var paragrafo = document.getElementById("par1");
+            paragrafo.innerHTML = str;
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de forEach</h1>
+    <button onclick="testaForEach()">Testa forEach</button>
+    <p id="par1">
+
+    </p>
+    
+    
+    
+</body>
+</html>

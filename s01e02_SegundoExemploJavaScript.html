@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Segundo Exemplo de JavaScript</title>
+		<script>
+			function soma(){
+				var resultado,n1,n2;
+				n1 = 2;
+				n2 = 3;
+				resultado = n1 + n2;
+				var paragrafo = document.getElementById("pSoma");
+				paragrafo.innerHTML = resultado;
+			}//Fim da função soma
+
+			function subtracao(){
+				var resultado,n1,n2;
+				n1 = 2;
+				n2 = 3;
+				resultado = n1 - n2;
+				var paragrafoSub = document.getElementById("pSubtracao");
+				paragrafoSub.innerHTML = resultado;
+			}//Fim da função subtracao
+
+
+
+			
+		</script>
+
+	</head>
+	<body>
+		<h1>Soma de 2 + 3</h1>
+		<p id="pSoma"></p>
+		<p id="pSubtracao"></p>
+		<button onclick="soma()">Somar</button><br>
+		<button onclick="subtracao()">Subtração</button>
+
+	</body>
+</html>

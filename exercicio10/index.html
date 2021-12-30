@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Epidemias</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app">
+    <section class="contact-form">
+        <h1>Cadastro de Estudantes</h1>
+        <form id="formulario">
+            <div class="input-group">
+                <label for="nome">Nome:</label>
+                <input id="nome" name="nome" type="text"/>
+            </div>
+
+            <div class="input-group">
+                <label for="reg">Registro Acadêmico: </label>
+                <input id="reg" name="reg" type="text"/>
+            </div>
+
+            <button type="button" onclick="insereTabela()">Criar tabela</button>
+            <button type="button" onclick="insereTopo()">Inserir Topo</button>
+            <button type="button" onclick="insereFinal()">Inserir Final</button>
+        </form>
+    </section>
+
+    <div class="resultado">
+        <h2>Cadastros</h2>
+        <table class="tg">
+            <thead>
+            <th>Nome</th>
+            <th>Registro Acadêmico</th>
+            </thead>
+            <tbody id="corpoTabela">
+            <tr id="id_1">
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+        function insereTabela(){
+            let novaLinha = document.createElement("tr");
+
+            let tdNome = document.createElement("td");
+            let txtNome = document.createTextNode("José")
+            tdNome.appendChild(txtNome);
+
+            let tdReg = document.createElement("td");
+            let txtReg = document.createTextNode("A001");
+            tdReg.appendChild(txtReg);
+
+            novaLinha.appendChild(tdNome);
+            novaLinha.appendChild(tdReg);
+
+            let cTabela = document.getElementById("corpoTabela");
+            cTabela.appendChild(novaLinha);
+
+            let novaLinha2 = document.createElement("tr");
+            let tdNome2 = document.createElement("td");
+            let txtNome2 = document.createTextNode("Maria")
+            tdNome2.appendChild(txtNome2);
+
+            let tdReg2 = document.createElement("td");
+            let txtReg2 = document.createTextNode("A002");
+            tdReg2.appendChild(txtReg2);
+
+            novaLinha2.appendChild(tdNome2);
+            novaLinha2.appendChild(tdReg2);
+
+            cTabela.appendChild(novaLinha2);
+
+            let novaLinha3 = document.createElement("tr");
+            let tdNome3 = document.createElement("td");
+            let txtNome3 = document.createTextNode("Daniela")
+            tdNome3.appendChild(txtNome3);
+
+            let tdReg3 = document.createElement("td");
+            let txtReg3 = document.createTextNode("A003");
+            tdReg3.appendChild(txtReg3);
+
+            novaLinha3.appendChild(tdNome3);
+            novaLinha3.appendChild(tdReg3);
+
+            cTabela.appendChild(novaLinha3);
+        }
+
+        function insereFinal() {
+            let novaLinha = document.createElement("tr");
+
+            let inputNome = document.getElementById("nome")
+            let tdNome = document.createElement("td");
+            let txtNome = document.createTextNode(inputNome.value)
+            tdNome.appendChild(txtNome);
+
+            let inputReg = document.getElementById("reg");
+            let tdReg = document.createElement("td");
+            let txtReg = document.createTextNode(inputReg.value);
+            tdReg.appendChild(txtReg);
+
+            novaLinha.appendChild(tdNome);
+            novaLinha.appendChild(tdReg);
+
+            let cTabela = document.getElementById("corpoTabela");
+            cTabela.appendChild(novaLinha);
+
+            function limpaForm() {
+                document.getElementById('formulario').reset();
+            }
+
+            limpaForm();
+        }
+
+        function insereTopo() {
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+
+            let inputNome = document.getElementById("nome");
+            let txtNome = document.createTextNode(inputNome.value);
+
+            let inputReg = document.getElementById("reg");
+            let txtReg = document.createTextNode(inputReg.value);
+
+            td1.appendChild(txtNome);
+            tr.appendChild(td1);
+            let tr_nome = document.getElementById("id_1");
+
+            td2.appendChild(txtReg);
+            tr.appendChild(td2);
+            let tr_reg = document.getElementById("id_1");
+
+            tr_nome.parentNode.insertBefore(tr, tr_nome);
+            tr_reg.parentNode.insertBefore(tr, tr_reg);
+
+            function limpaForm() {
+                document.getElementById('formulario').reset();
+            }
+
+            limpaForm();
+        }
+
+
+    </script>
+
+</div>
+</body>
+</html>

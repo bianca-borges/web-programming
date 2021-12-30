@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <script>
+            function compara(valor1, valor2){
+               if(valor1>valor2){
+                   return 1;
+               }
+               if(valor1<valor2){
+                   return -1;
+               }
+               return 0;
+            }
+
+            function exemploOrdenacaoMap(){
+                let vetor1 = [0,1,55,2,4,6,8,5,10,20];
+                let vetor2 = vetor1.sort(compara);
+                alert(vetor2);
+            }
+            //vetor2 = [6,8]
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="exemploOrdenacaoMap()">Ordenar o vetor</button>
+
+        
+    </body>
+</html>

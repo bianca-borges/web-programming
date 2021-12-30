@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <script>
+            function compara(p1, p2){
+               if(p1.idade>p2.idade){
+                   return 1;
+               }
+               if(p1.idade<p2.idade){
+                   return -1;
+               }
+               return 0;
+            }
+
+            function exemploOrdenacaoMap(){
+                let vetor1 = [];
+                let pessoa1 = {
+                    nome:"Joaquim",
+                    idade:10
+                };
+                vetor1[0] = pessoa1;
+                let pessoa2 = {
+                    nome:"José",
+                    idade:5
+                };
+                
+                vetor1[1] = pessoa2;
+                let pessoa3 = {
+                    nome:"Maria",
+                    idade:7
+                };
+
+                vetor1[2] = pessoa3;
+
+                let vetor2 = vetor1.sort(compara);
+                let i = 0;
+                let str = "";
+                for(i = 0; i < vetor2.length; i++){
+                    str += vetor2[i].nome+" ; "+ vetor2[i].idade + "\n";
+                }
+                alert(str);
+            }
+            //vetor2 = [6,8]
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="exemploOrdenacaoMap()">Ordenar o vetor</button>
+
+        
+    </body>
+</html>

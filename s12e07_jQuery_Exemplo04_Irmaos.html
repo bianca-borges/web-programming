@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .descendants * {
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+
+        </style>
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function (){
+                    let irmaosulquesaopar =  $("p").siblings("h1");
+                    irmaosulquesaopar.css({ "color": "blue", "border": "2px solid orange" });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="descendants" style="width:500px;">div (elemento corrente)
+            <h1>Exemplo de siblings</h1>
+            <p>p (filho-1 da div)
+                <span>span (neto-1 da div)</span>
+            </p>
+            <p>p (filho-2 da div)
+                <span>span (neto-2 da div)</span>
+            </p>
+            <ul>
+                <li>Item-1</li>
+                <li>Item-2</li>
+            </ul>
+
+        </div>
+        <h1>Não é irmão dos parágrafos</h1>
+        <button>Encontre os filhos da div com find</button>
+    </body>
+</html>

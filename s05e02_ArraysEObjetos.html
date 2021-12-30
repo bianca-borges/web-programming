@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Arrays e objetos</title>
+    <script>
+        function testaArray(){
+            var i;
+            var vetor = [];
+            var objeto = {
+                nome:"José",
+                cpf:"123.123.123-87",
+                idade:10
+            };
+            var outroVetor = ["verde","amarelo","azul","branco"];
+            var funcao = function(){
+                return "Nossa que legal";
+            };
+
+            vetor[0] = objeto;
+            vetor[1] = outroVetor;
+            vetor[2] = funcao;
+
+            var objetoP1 = document.getElementById("testaArrayObjeto");
+            var objetoP2 = document.getElementById("testaOutroVetor");
+            var objetoP3 = document.getElementById("testaFuncao");
+            objetoP1.innerHTML = "Nome: " + vetor[0].nome +
+                                "<br>CPF: " + vetor[0].cpf +
+                                "<br>Idade: " + vetor[0].idade;
+            var str="";
+            objetoP2.innerHTML=str;
+            for(i = 0; i < vetor[1].length; i++){
+                objetoP2.innerHTML+=vetor[1][i]+"<br>";
+            }
+
+            objetoP3.innerHTML = vetor[2]();
+
+
+        }//Fim da função testaArray()
+       
+    </script>
+</head>
+<body>
+    <h1>Testa o elemento objeto do vetor</h1>
+    <p id="testaArrayObjeto"></p>
+    <h1>Testa o elemento outroVetor do vetor</h1>
+    <p id="testaOutroVetor"></p>
+    <h1>Testa o elemento função do vetor</h1>
+    <p id="testaFuncao"></p>
+    <button onclick="testaArray()">Teste de Array</button>
+    
+</body>
+</html>

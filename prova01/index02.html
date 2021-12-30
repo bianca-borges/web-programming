@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo de remoção de elemento HTML</title>
+    <script>
+        function mostraItensDotBody(){
+            let objeto = document.body.firstElementChild;
+            let filhos = objeto.children;
+            let i;
+            let str="";
+            for(i=0; i<filhos.length; i++){
+                 str += filhos[i].innerText +"\n";
+            }
+            alert(str);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Coluna-01</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr><td>Dado-01</td></tr>
+        <tr><td>Dado-02</td></tr>
+        <tr><td>Dado-03</td></tr>
+        <tr><td>Dado-04</td></tr>
+    </tbody>
+</table>
+<br>
+<button onclick="mostraItensDotBody()">Mostrar itens</button>
+<p></p>
+</body>
+</html>

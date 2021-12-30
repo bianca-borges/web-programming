@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exemplo de funções como variável</title>
+		<script>
+			function cadastraPessoa(){
+				var pessoa1 = {nome:"João",idade:30,cpf:"123.123.123-87"};
+				pessoa1.idade = 31;
+				pessoa1.nome = "João da Silva";
+				var objetoPar = document.getElementById("par01");
+				objetoPar.innerHTML = "Idade: "+pessoa1.idade+
+									  "<br>Nome: "+pessoa1.nome;
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<h1 id="titulo1" name="nomeDoTitulo">Exemplo de objeto</h1>
+		<button onclick="cadastraPessoa()">Alterando objetos</button>
+		<p id="par01"></p>
+
+		
+
+	</body>
+</html>
+
+ 
+

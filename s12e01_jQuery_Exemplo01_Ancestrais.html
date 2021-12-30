@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .ancestrais * {
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+        </style>
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click( function(){
+                    $("#s1").parent().css({ "color": "red", "border": "2px solid red","background-color":"blue" });
+                    $("#s1").css({"background-color":"green"});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="ancestrais">
+            <div style="width:500px;">div (tataravô do span-1)
+                <ul>ul (vô do span-1)
+                    <li>li (pai do span-1)
+                        <span id="s1">span-1</span>
+                    </li>
+                </ul>
+            </div>
+            <div style="width:500px;">div (vovô do span-2)
+                <p>p (pai do span-2)
+                    <span>span-2</span>
+                </p>
+            </div>
+        </div>
+        <button>Encontre os pais dos spans</button>
+    </body>
+</html>

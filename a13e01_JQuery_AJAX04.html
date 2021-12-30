@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("button").click(function () {
+          var urlAJAX = "https://pw1ifsp.herokuapp.com/users/";
+          urlAJAX+=$("#idRemover").val();
+          $.support.cors = true;
+          $.ajax({
+            url: urlAJAX,
+            type: "DELETE",
+            success: function (result) {
+                alert(result);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label for="idRemover">Id a remover</label>
+    <input type="text" id="idRemover"><br><br>
+    <button>Remove usuário</button>
+  </body>
+</html>

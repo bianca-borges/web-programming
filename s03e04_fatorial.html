@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Função-04</title>
+        <script>
+            function fatorial(){
+                let numeroASerCalculado, fatorial=1;
+                let objetoInput = document.getElementById("entradaNumerica");
+                numeroASerCalculado = parseFloat(objetoInput.value);
+                //cálculo do fatorial
+                for(i=1; i<=numeroASerCalculado; i++){
+                    fatorial*=i;
+                }
+                let objetoPar = document.getElementById("resultado");
+                objetoPar.innerHTML = fatorial;
+                
+                //fatorial = 1*1*2*3
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label for="entradaNumerica">Numero para ser calculado</label>
+            <input type="text" id="entradaNumerica">
+            
+        </form>
+        <button onclick="fatorial()">Calcula fatorial</button>
+
+        <p id="resultado"></p>
+
+    </body>
+</html>

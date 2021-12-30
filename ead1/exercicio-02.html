@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<body>
+<h2 id="titulo"></h2>
+<h3 id="tempo"></h3><br>
+<h3>Ingredientes: </h3>
+<p id="ingredientes"></p>
+<h3>Modo de Preparo: </h3>
+<p id="preparo"></p>
+<script>
+    let receita, text;
+    receita = {
+        'titulo': 'Pudim de Leite Condensado',
+        'tempoDePreparo': "60 min",
+        'ingredientes': ['1 lata de leite condensado', '1 lata de leite (medida da lata de leite condensado)', '3 ovos inteiros',
+            '1 xicara (cha) de acucar', '1/2 xicara de agua'],
+
+        'preparo': ['Primeiro, bata bem os ovos no liquidificador.',
+            'Acrescente o leite condensado e o leite, e bata novamente.',
+            'Derreta o acucar na panela ata ficar moreno, acrescente a agua e deixe engrossar.',
+            'Coloque em uma forma redonda e despeje a massa do pudim por cima.',
+            'Asse em forno medio por 45 minutos, com a assadeira redonda dentro de uma maior com agua.',
+            'Espete um garfo para ver se esta bem assado.', 'Deixe esfriar e desenforme.']
+    };
+
+    // Título
+    document.getElementById("titulo").innerHTML = receita.titulo;
+    document.getElementById("tempo").innerHTML = 'Tempo de Preparo: ' + receita.tempoDePreparo;
+
+    // Lista de ingredientes
+    text = "<ul>";
+    receita.ingredientes.forEach(retornaListaNaoOrdenadaIngredientes);
+    text += "</ul>";
+    document.getElementById("ingredientes").innerHTML = text;
+    function retornaListaNaoOrdenadaIngredientes(elemento){
+        text += "<li>" + elemento + "</li>";
+    }
+
+    // Lista de preparos
+    text = "<ul>";
+    receita.preparo.forEach(retornaListaOrdenadaPreparo);
+    text += "</ul>";
+    document.getElementById("preparo").innerHTML = text;
+    function retornaListaOrdenadaPreparo(elemento){
+        text += "<li>" + elemento + "</li>";
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exemplo de funções como variável</title>
+		<script>
+			function argumentosIndet(){
+				var str="";
+				var i;
+
+				for(i = 0; i < arguments.length; i++){
+					str += "Parâmetro-"+i+": "+arguments[i]+"<br>";
+				}
+
+				var objetoPar = document.getElementById("par01");
+				objetoPar.innerHTML = str;
+
+
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<h1>Exemplo de função com argumentos variáveis</h1>
+		<button onclick="argumentosIndet('azul','verde','amarelo','branco','preto','vermelho')">argumentosVar</button>
+		<p id="par01"></p>
+
+		
+
+	</body>
+</html>
+
+ 
+

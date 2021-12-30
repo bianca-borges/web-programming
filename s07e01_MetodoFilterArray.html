@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <script>
+            function funcaoQueIteraArray(valor, indice, vetor){
+                let media = 0, i;
+                for(i=0;i<vetor.length;i++){
+                    media+=vetor[i];
+                }
+                media/=vetor.length;
+                return valor < media;
+            }
+
+            function exemploFilter(){
+                let vetor1 = [0,1,2,4,6,8,5,10,20];
+                let vetor2 = vetor1.filter(funcaoQueIteraArray);
+                alert(vetor2);
+            }
+            //vetor2 = [6,8]
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="exemploFilter()">Executa o método filter</button>
+
+        
+    </body>
+</html>

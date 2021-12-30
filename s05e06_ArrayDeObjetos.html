@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Array-01</title>
+    <script>
+        function criaVetorDeObjetos(){
+            var vetor = [];
+            var objeto = {
+                nome:"José",
+                cpf:"123.123.123-87",
+                idade: 10
+            };
+
+            var outroVetor=["verde","amarelo","azul","branco"];
+
+            var funcao = function(){
+                return "Nossa que legal";
+            }
+
+            vetor[0] = objeto;
+            vetor[1] = outroVetor;
+            vetor[2] = funcao;
+            vetor[3] = "Elemento String";
+            vetor[4] = 10;
+
+            var objetoPar = document.getElementById("par1");
+            objetoPar.innerHTML = vetor[0].nome+"<br>"+vetor[0].cpf+"<br>"+vetor[0].idade+"<br><br>";
+            objetoPar.innerHTML += vetor[1][0]+"<br>"+vetor[1][1]+"<br><br>";
+            objetoPar.innerHTML += vetor[2]();
+
+        }//Fim da função criaVetorDeObjetos
+
+        function cadastraPessoas(){
+            var pessoas=[];
+            var p1 = {
+                nome:"João",
+                idade:30
+            };
+
+            var p2 = {
+                nome:"Maria",
+                idade:28
+            };
+
+            pessoas[0] = p1;
+            pessoas[1] = p2;
+
+            var str = "";
+            var i;
+
+            for(i = 0; i < pessoas.length; i++){
+                str+="Pessoa-"+i+":\n";
+                str+=pessoas[i].nome + " ; " + pessoas[i].idade + "\n\n";
+            }
+
+            alert(str);
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de vetor de objetos</h1>
+    <button onclick="criaVetorDeObjetos()">Testa vetor de objetos</button>
+    <p id="par1"></p>
+    <button onclick="cadastraPessoas()">Cadastra Pessoas</button>
+    
+    
+</body>
+</html>

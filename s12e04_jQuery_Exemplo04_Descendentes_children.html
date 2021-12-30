@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .descendants * {
+                display: block;
+                border: 2px solid lightgrey;
+                color: lightgrey;
+                padding: 5px;
+                margin: 15px;
+            }
+        </style>
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("button").click( function(){
+                    let descendentes = $("div").children("p.first");
+                    descendentes.css({ "color": "red", "border": "2px solid blue" });
+                });    
+            });
+        </script>
+    </head>
+    <body>
+        <div class="descendants" style="width:500px;">div (elemento corrente)
+            <h1>Exemplo de children</h1>
+            <p class="first">p (filho-1 da div)
+                <span>span (neto-1 da div)</span>
+            </p>
+            <p>p (filho-2 da div)
+                <span>span (neto-2 da div)</span>
+            </p>
+            <p class="first">p (filho-3 da div)
+                <span>span (neto-3 da div)</span>
+            </p>            
+        </div>
+        <button>Encontre os filhos da div</button>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Exemplo de criação de objetos</title>
+		<script>
+			function cadastraPessoa(){
+				var pessoa1 = new Object();
+				pessoa1.nome = "João";
+				pessoa1.idade = 30;
+				pessoa1.cpf = "123.123.123-87";		
+				pessoa1.mostraInfos = function(){
+					var str = "Nome: "+this.nome+"<br>"+
+						  "Idade: "+this.idade+"<br>"+
+						  "CPF: "+this.cpf+"<br>";
+					return str;
+				};
+
+				var pessoa2 = new Object();
+				pessoa2["nome"] = "Maria"; //pessoa2.nome = "Maria";
+				pessoa2["idade"] = 25;
+				var strCPF = "cpf";
+				pessoa2[strCPF] = "789.789.789-98";//pessoa2["cpf"]
+
+				var strPessoa2="";
+				var propriedade;
+
+				for(propriedade in pessoa2){
+					strPessoa2+=pessoa2[propriedade]+"<br>";
+				}
+
+				document.getElementById("par01").innerHTML = strPessoa2;
+
+
+
+
+
+
+
+
+				// var objetoPar = document.getElementById("par01");
+				// objetoPar.innerHTML = pessoa1.mostraInfos();
+
+				
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<h1 id="titulo1" name="nomeDoTitulo">Exemplo de objeto - 2</h1>
+		<button onclick="cadastraPessoa()">Alterando objetos</button>
+		<p id="par01"></p>
+
+		
+
+	</body>
+</html>
+
+ 
+

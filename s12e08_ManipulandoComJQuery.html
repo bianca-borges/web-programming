@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Append jQuery</title>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //=======Escrever os métodos que serão executados====================
+                //Método-01
+                $("#btn1").click(function(){
+                    $("p").append("<b>Texto inserido</b>");
+                });
+
+                //Método-02
+                $("#btn2").click(function(){
+                    $("ol").append("<li>Item-4 inserido</li>");
+                });
+
+                //Método-03 ---   
+                $("#btn3").click(function(){
+                    $("p").prepend("<i>Inserido no início do texto!!!! </i>");
+                }); 
+
+                //Método-04
+                $("#btn4").click(function(){
+                    $("ol").prepend("<li>Item-0 inserido no início da lista</li>");
+                });   
+
+                //Método-05
+                $("#btn5").click(function(){
+                    $("ol").before("<h3>Itens de lista</h3>");
+                });  
+
+                //Método-06
+                $("#btn6").click(function(){
+                    $("ol").after("<hr>");
+                });
+
+                //Método-07
+                $("#btn7").click(function(){
+                    $("#ol1").remove();
+                });  
+
+                //Método-08
+                $("#btn8").click(function(){
+                    $("#ol1").empty();
+                });                              
+            //=======Fim dos métodos que serão executados=====================
+        });
+    </script>
+
+</head>
+
+<body>
+    <p>Parágrafo-01</p>
+    <p>Parágrafo-02</p>
+    <p>Parágrafo-03</p>
+    <ol id="ol1"> 
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+    </ol>
+
+    <button id="btn1">Inserir no fim dos parágrafos</button>
+    <button id="btn2">Inserir um item no fim da lista</button>
+    <button id="btn3">Inserir no início dos parágrafos</button>
+    <button id="btn4">Inserir um item no início da lista</button><br>
+    <button id="btn5">Inserir antes da lista</button>
+    <button id="btn6">Inserir depois da lista</button>
+    <button id="btn7">Remove a lista</button>
+    <button id="btn8">Remove filhos da lista</button>
+    
+
+</body>
+
+</html>

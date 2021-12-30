@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Array-01</title>
+    <script>
+        function arrayVersao01() {
+            var nomePessoas = ["José", "Maria", "João"];
+            var objetoParagrafoVersao01 = document.getElementById("versao01");
+            var str = "Nome elemento-01: " + nomePessoas[0] +
+                "<br>Nome elemento-02: " + nomePessoas[1] +
+                "<br>Nome elemento-03: " + nomePessoas[2];
+            objetoParagrafoVersao01.innerHTML = str;
+        }
+
+        function arrayVersao02(){
+            var nomePessoas = new Array("Érika","Daniel","Cintia");
+            var objetoParagrafoVersao02 = document.getElementById("versao02");
+            var str = "Nome elemento-01: " + nomePessoas[0] +
+                "<br>Nome elemento-02: " + nomePessoas[1] +
+                "<br>Nome elemento-03: " + nomePessoas[2];
+            objetoParagrafoVersao02.innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <h2>Teste da versão-01 de arrays</h2>
+    <button onclick="arrayVersao01()">Array Versão-01</button>
+    <p id="versao01"></p>
+    <h2>Teste da versão-02 de arrays</h2>
+    <button onclick="arrayVersao02()">Array Versão-02</button>
+    <p id="versao02"></p>
+</body>
+</html>

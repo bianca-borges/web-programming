@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Propriedades e Métodos</title>
+    <script>
+        function testaProprMetodos(){
+           var frutas=["banana","laranja","uva"];
+           //alert(frutas.length);
+           frutas.push("pêra");
+           frutas.push("goiaba");
+           frutas.pop();
+           frutas.shift();
+           // //laranja,uva,pera
+           frutas.unshift("Kiwi");
+           // //kiwi,laranja,uva,pera
+           frutas.splice(2,0,"abacate");
+           // //kiwi,laranja,abacate,uva,pera
+           frutas.splice(3,1);
+           // //kiwi,laranja,abacate,pera
+           var legumes=["tomate","pepino","abobrinha"];
+           var listaCompras = [];
+           listaCompras = frutas.concat(legumes);
+
+           //alert(frutas);
+           alert(listaCompras);
+
+        }//Fim da função
+       
+    </script>
+</head>
+<body>
+    <h1>Teste de Propriedades e Métodos</h1>
+    <button onclick="testaProprMetodos()">Teste</button>
+    
+    
+</body>
+</html>

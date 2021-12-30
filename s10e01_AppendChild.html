@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exemplo de getItem</title>
+        <script>
+            function incluiParagrafo(){
+                var textoPar = document.createTextNode("Teste");
+                var elPar = document.createElement("p");
+                elPar.appendChild(textoPar);
+                var corpo = document.body;
+                corpo.appendChild(elPar);
+            }
+
+            var i = 1;
+            function incluiTelefone(){
+                var iptTelefone = document.createElement("input");
+                iptTelefone.setAttribute("type","text");
+                iptTelefone.setAttribute("name","tel"+i);
+                i++;
+                var formulario = document.getElementById("frm01");
+                formulario.appendChild(iptTelefone);
+
+            }
+        </script>
+        
+    </head>
+    <body>
+        <form id="frm01">
+
+        </form>
+        <button id="btn01" onclick="incluiParagrafo()">Adicionar parágrafo</button>
+        <button id="btn02" onclick="incluiTelefone()">Inclui telefone</button>
+    </body>
+</html>

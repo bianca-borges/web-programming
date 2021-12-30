@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo métodos de arrays</title>
+    <script>
+        function metodosArrays(){
+            var frutas = ["abacate","banana","pêra"];
+            frutas.push("kiwi");
+            frutas.push("laranja");
+            frutas.pop();
+            frutas.pop();
+            frutas.shift();
+            //banana, pêra
+            frutas.unshift("tomate");
+            frutas.splice(1,0,"carambola","melão");
+            //tomate,carambola,melão,banana,pêra
+            frutas.splice(3,2);
+            //tomate,carambola,melão
+            var legumes=["abobrinha","pepino","cenoura"];
+
+            var listaCompleta = [];
+            listaCompleta = frutas.concat(legumes);
+
+
+            //alert(frutas);
+            alert(listaCompleta);
+            
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de métodos de arrays</h1>
+    <button onclick="metodosArrays()">Testa métodos de arrays</button>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    let vetorObjetos = [
+        { issn: 1,
+            autor: 'Bill Gates',
+            titulo: 'The Road Ahead',
+            statusLeitura: true
+        },
+        { issn: 2,
+            autor: 'Steve Jobs',
+            titulo: 'Walter Isaacson',
+            statusLeitura: false
+        },
+        { issn: 3,
+            autor: 'Alex Fergusson',
+            titulo: 'Manchester United',
+            statusLeitura: true
+        },
+        { issn: 4,
+            autor: 'Suzanne Collins',
+            titulo: 'Mockingjay: The Final Book of The Hunger Games',
+            statusLeitura: false
+        }];
+
+    function teste(){
+        vetorObjetos.map(function(valor){
+            if(valor.autor.charAt(0) === 'S'){
+                let autores = valor.autor;
+                alert(autores);
+            }
+        });
+    }
+
+    // Nao entendi a função 02
+
+
+    function exibe(){
+        let paragrafo = document.getElementById('p1');
+        for(let i = 0; i < vetorObjetos.length; i++){
+            let item = document.createElement('p');
+            item.appendChild(document.createTextNode(`ISSN: ${vetorObjetos[i].issn}, AUTOR: ${vetorObjetos[i].autor},
+            TÍTULO: ${vetorObjetos[i].titulo}, STATUS: ${vetorObjetos[i].statusLeitura}`));
+            paragrafo.appendChild(item);
+        }
+    }
+
+</script>
+<div id="p1">
+
+</div>
+<button onclick="teste()">Autores com S</button>
+<button onclick="exibe()">Exibir Array</button>
+</body>
+</html>

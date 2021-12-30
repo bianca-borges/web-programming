@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício 01</title>
+        <script>
+            function testaParentesco(){
+                let par3 = document.getElementById("p3");
+                let paiDoPar3 = par3.parentNode;
+                paiDoPar3.style.backgroundColor = "red";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Título</h1>
+        <div>
+            <p id="p1">Parágrafo-01</p>
+            <p id="p2">Parágrafo-02</p>
+            <p id="p3">Parágrafo-03</p>
+        </div>
+
+        <button onclick="testaParentesco()">ParentNode</button>
+        
+    </body>
+
+</html>
